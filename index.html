@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Carousel Lining Page</title>
+    
+    <!-- Menghubungkan CSS Font Awesome dan Google Fonts untuk ikon dan font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    
+    <style>
+    
+        /* Gaya dasar body dan heading */
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* Mengatur lebar sidebar */
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+
+        /* Pengaturan tampilan carousel */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-image {
+            min-width: 100%;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .button {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* Mengatur jarak konten utama dari sidebar */
+        #main {
+            margin-left: 120px;
+        }
+
+        /* Responsif sidebar */
+        @media only screen and (max-width: 600px) {
+            #main {margin-left: 0}
+        }
+
+        /* Gaya untuk footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body class="w3-black">
+
+<!-- Sidebar untuk navigasi utama -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+    <img src="4.png" style="width:100%">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black nav-link" data-page="home">
+        <i class="fa fa-home w3-xxlarge"></i>
+        <p>HOME</p>
+    </a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black nav-link" data-page="about">
+        <i class="fa fa-user w3-xxlarge"></i>
+        <p>ABOUT</p>
+    </a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black nav-link" data-page="products">
+        <i class="fa fa-eye w3-xxlarge"></i>
+        <p>PRODUCTS</p>
+    </a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black nav-link" data-page="contact">
+        <i class="fa fa-envelope w3-xxlarge"></i>
+        <p>CONTACT</p>
+    </a>
+</nav>
+
+
+<!-- Navbar untuk layar kecil -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+        <a href="#" class="w3-bar-item w3-button nav-link" style="width:25% !important" data-page="home">HOME</a>
+        <a href="#" class="w3-bar-item w3-button nav-link" style="width:25% !important" data-page="about">ABOUT</a>
+        <a href="#" class="w3-bar-item w3-button nav-link" style="width:25% !important" data-page="products">PRODUCTS</a>
+        <a href="#" class="w3-bar-item w3-button nav-link" style="width:25% !important" data-page="contact">CONTACT</a>
+    </div>
+</div>
+
+<!-- Konten Utama -->
+<div class="w3-padding-large" id="main">
+    <!-- Header dan Carousel -->
+    <header class="w3-container w3-padding-32 w3-center w3-black page" id="home">
+        <h1 class="w3-text-black">Sportify</h1>
+        <p><b>Perlengkapan Terbaik Untuk Permainan Terbaik</b></p>
+        
+        <!-- Carousel Section -->
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="1.jpg" class="carousel-image" alt="Image 1">
+                <img src="2.jpg" class="carousel-image" alt="Image 2">
+                <img src="3.jpg" class="carousel-image" alt="Image 3">
+            </div>
+            <div class="carousel-buttons">
+                <button class="button" id="prevBtn">&#10094;</button>
+                <button class="button" id="nextBtn">&#10095;</button>
+        
+            </div>
+        </div>
+       <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black nav-link" data-page="products"><u>Produk Unggulan Kami!</u></a>
+    </header>
+
+    <!-- Produk Unggulan Section -->
+    <section class="w3-padding-64 w3-content page" id="products" style="display: none;">
+        <h2 class="w3-text-black">Produk Unggulan Sportify</h2>
+        <p>Jersey Bola Custom, Sepatu Bola Pro, dan Bola Sepak Premium beserta perlengkapan lainnya seperti shinpads, goalkeeper gloves, dan lainnya.</p>
+        <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half w3-margin-bottom">
+                 <h3 class="w3-text-black">Jersey Bola Custom Rp100.000</h3>
+                <p>Dapat membuat jersey bola custom dengan menambahkan nama, nomor, design logo, dan design jersey yang dipilih.</p>
+            </div>
+            <div class="w3-half w3-margin-bottom">
+                <h3 class="w3-text-black">Sepatu Bola Pro Rp500.000</h3>
+                <p>Sepatu bola pro ini menawarkan kenyamanan dan performa terbaik di lapangan.</p>
+            </div>
+            <div class="w3-half w3-margin-bottom">
+                <h3 class="w3-text-black">Bola Sepak Premium Rp250.000</h3>
+                <p>Bola sepak dirancang untuk pertandingan resmi dengan kualitas terbaik dan tahan lama.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section class="w3-padding-64 w3-content w3-text-grey page" id="about" style="display: none;">
+        <h2 class="w3-text-black">Tentang Kami</h2>
+        <p>Sportify adalah toko olahraga yang menyediakan peralatan sepak bola dan futsal terbaik, termasuk jersey, sepatu, dan bola. Kami menawarkan produk berkualitas untuk mendukung performa di lapangan, dengan layanan ramah.</p>
+    </section>
+
+    <!-- Kontak Kami Section -->
+    <section class="w3-padding-64 w3-content w3-text-grey page" id="contact" style="display: none;">
+        <h2 class="w3-text-black">Kontak Kami</h2>
+        <p>Hubungi kami melalui email: <a href="sportify@gmail.com">sportify@gmail.com</a></p>
+        <p>Silahkan mengisi formulir untuk saran dan masa depan Sportify!</p>
+         <h2 align="center">Formulir</h2>
+      <form>
+            <p align="center"><input type="email" name="email" placeholder="Email Anda" required></p>
+            
+            <p align="center"><input type="text" name="phone" placeholder="Nomor Telepon" required></p>
+            
+            <p align="center"><textarea name="feedback" rows="4" placeholder="Tanggapan dan Saran untuk Toko Sportify" required></textarea></p>
+            
+            <p align="center"><textarea name="additional-info" rows="4" placeholder="Keterangan tambahan" required></textarea></p>
+            
+           <p align="center"><input type="submit" value="Kirim"></p>
+        </form>
+      
+    </section>
+</div>
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Sportify. Semua hak dilindungi.</p>
+</footer>
+
+<!-- Carousel Script -->
+<script>
+    /* Deklarasi indeks awal untuk slide carousel */
+    let currentIndex = 0;
+
+    /* Fungsi untuk menampilkan slide sesuai indeks */
+    function showSlide(index) {
+        const slides = document.querySelector('.carousel-images');
+        const totalSlides = document.querySelectorAll('.carousel-image').length;
+        /* Mengatur indeks agar looping kembali ke awal atau akhir slide jika melebihi batas */
+        if (index >= totalSlides) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else {
+            currentIndex = index;
+        }
+        /* Menggeser slide berdasarkan indeks saat ini */
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    /* Event Listener untuk tombol navigasi carousel */
+    document.getElementById('prevBtn').addEventListener('click', () => showSlide(currentIndex - 1));
+    document.getElementById('nextBtn').addEventListener('click', () => showSlide(currentIndex + 1));
+
+    /* Navbar untuk Navigasi Halaman */
+    const navLinks = document.querySelectorAll('.nav-link');
+    const pages = document.querySelectorAll('.page');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const targetPage = link.getAttribute('data-page');
+            pages.forEach(page => page.style.display = 'none');
+            document.getElementById(targetPage).style.display = 'block';
+        });
+    });
+</script>
+</body>
+</html>
+
+
